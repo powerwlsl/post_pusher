@@ -1,0 +1,8 @@
+namespace :post_push do
+  namespace "<%= timestamp %>" do
+    desc 'Runs <%= task_name %>'
+    task '<%= task_name %>' => :environment do
+      Rake::Task['<%= rake_task_name %>'].invoke
+    end
+  end
+end

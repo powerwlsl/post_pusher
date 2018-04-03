@@ -1,0 +1,32 @@
+require 'progress_bar'
+<%
+full_name = "post_push:#{timestamp}:#{task_name}"
+%>
+# When writing your task, be sure to:
+#  * Print out useful information at startup and on completion
+#  * Use a progress bar if the task will take a while
+#  * Check Rails.env.development? or stage? and skip lengthy operations
+
+namespace :post_push do
+  namespace "<%=timestamp%>" do
+    desc 'Describe the task here'
+    task '<%=task_name%>' => :environment do
+
+      puts "---------------------------------------------------------"
+      puts "Starting <%=full_name%> at #{DateTime.now}"
+
+      total_records = YourModel.count
+      next if total_records.zero?
+      progress_bar = ProgressBar.new(total_records)
+
+      YourModel.find_each do |model|
+        # YOUR CODE HERE
+
+        progress_bar.increment!
+      end
+
+      puts "Updated #{total_records} records."
+      puts "Completed <%=full_name%> at #{DateTime.now}"
+    end
+  end
+end
