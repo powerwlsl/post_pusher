@@ -4,14 +4,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'post_pusher/version'
 
 Gem::Specification.new do |spec|
-  spec.name = 'post_pusher'
-  spec.version = PostPusher::VERSION
   spec.authors = ['PatientsLikeMe']
+  spec.description = 'A tool to run a set of tasks after deploys'
   spec.email = ['engineers@patientslikeme.com']
   spec.homepage = 'https://www.patientslikeme.com'
-
+  spec.name = 'post_pusher'
+  spec.license = 'MIT'
   spec.summary = 'A tool to run a set of tasks after deploys'
-  spec.description = 'A tool to run a set of tasks after deploys'
+  spec.version = PostPusher::VERSION
 
   spec.files = Dir["{bin,lib,db}/**/*", "README.md", "Rakefile"]
   spec.bindir = 'exe'
