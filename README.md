@@ -19,7 +19,7 @@ $ bundle
 Or install it yourself with:
 
 ```
-gem install post_pusher
+$ gem install post_pusher
 ```
 
 
@@ -28,20 +28,22 @@ gem install post_pusher
 No way buddy; getting your post push task ready for a release using PostPusher is super easy.
 
 Steps:
--rails g post_push_task task_name
--add your code into the new task
--commit
+
+- `rails g post_push_task task_name`
+- add your code into the new task
+- commit
 
 Running the tasks:
--bin/post_push work
 
-## How do I add this to my rails app?
+- `bin/post_push work`
 
--Add PostPusher to your gemfile
--bundle
--Run migrations (creates records table)
--bundle binstub post_pusher (this enables you to be able to run bin/post_push by putting the post_push file in your bin directory)
--Commit your changes
+## How do I add this to my Rails app?
+
+- Add PostPusher to your gemfile
+- `bundle`
+- Run migrations (creates records table)
+- `bundle binstub post_pusher` (this enables you to be able to run `bin/post_push` by putting the post_push file in your bin directory)
+- Commit your changes
 
 ## Running Tests
 
