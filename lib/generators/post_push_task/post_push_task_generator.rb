@@ -4,7 +4,7 @@ class PostPushTaskGenerator < Rails::Generators::Base
   desc "Create a post push task"
   argument :task_name, type: :string
   def create_post_push_task
-    template "post_push_task.rake.erb", "lib/tasks/post_push/#{timestamp}_#{task_name}.rake"
+    template "post_push_task.rake.erb", "lib/tasks/post_push/#{timestamp}_#{task_name.underscore}.rake"
   end
 
   private
