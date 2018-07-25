@@ -41,6 +41,7 @@ Running the tasks:
 
 - Add PostPusher to your gemfile
 - `bundle`
+- `rails g post_pusher:install` (generate migration to create post_push_statuses table)
 - Run migrations (creates records table)
 - `bundle binstub post_pusher` (this enables you to be able to run `bin/post_push` by putting the post_push file in your bin directory)
 - Commit your changes
