@@ -44,6 +44,7 @@ Running the tasks:
 - `rails g post_pusher:install` (generate migration to create post_push_statuses table)
 - Run migrations (creates records table)
 - `bundle binstub post_pusher` (this enables you to be able to run `bin/post_push` by putting the post_push file in your bin directory)
+- `bundle binstubs bundler --force` (this replaces `bin/bundle` so `bin/post_push` commands work properly)
 - Commit your changes
 
 ## Running Tests
