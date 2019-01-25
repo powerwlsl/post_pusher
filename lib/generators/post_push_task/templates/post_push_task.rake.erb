@@ -15,6 +15,13 @@ namespace :post_push do
       puts "---------------------------------------------------------"
       puts "Starting <%=full_name%> at #{DateTime.now}"
 
+      # If your task takes more than a minute or two to run, consider
+      # uncommenting this section so dev and stage environments can skip it
+      # unless Rails.env.production? || ENV['FORCE']
+        # puts "Skipping <%=task_name%> in #{Rails.env}; to run this specify FORCE=1"
+        # next
+      # end
+
       total_records = YourModel.count
       next if total_records.zero?
       progress_bar = ProgressBar.new(total_records)
