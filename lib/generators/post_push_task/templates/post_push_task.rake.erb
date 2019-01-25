@@ -5,7 +5,7 @@ full_name = "post_push:#{timestamp}:#{task_name}"
 # When writing your task, be sure to:
 #  * Print out useful information at startup and on completion
 #  * Use a progress bar if the task will take a while
-#  * Check Rails.env.development? or stage? and skip lengthy operations
+#  * Skip lengthy tasks unless we're in prod or the task is run with FORCE
 
 namespace :post_push do
   namespace "<%=timestamp%>" do
@@ -14,6 +14,13 @@ namespace :post_push do
 
       puts "---------------------------------------------------------"
       puts "Starting <%=full_name%> at #{DateTime.now}"
+
+      # If your task takes more than a minute or two to run, consider
+      # uncommenting this section so dev and stage environments can skip it
+      # unless Rails.env.production? || ENV['FORCE']
+        # puts "Skipping <%=task_name%> in #{Rails.env}; to run this specify FORCE=1"
+        # next
+      # end
 
       total_records = YourModel.count
       next if total_records.zero?
