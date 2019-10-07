@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "rails" # TODO: get tests running without this.
 
   spec.add_development_dependency "sqlite3", "~> 1.3.6"
-  spec.add_development_dependency "minitest"
+  spec.add_development_dependency "minitest", "~> 5.11.0"
   spec.add_development_dependency "minitest-reporters", "~> 1.1.11"
   spec.add_development_dependency "minitest-spec-rails"
   spec.add_development_dependency "pry"
