@@ -2,6 +2,10 @@ require "thor"
 require_relative "../lib/post_pusher/rake_task_runner"
 
 class PostPushCli < Thor
+  def self.exit_on_failure?
+    true
+  end
+
   desc "work", "Run remaining post push tasks"
   def work
     load_rails_env!
@@ -28,6 +32,7 @@ class PostPushCli < Thor
 
     success_message "#{succeeded.size} tasks succeeded"
     error_message "Errors occured in #{failed.size} tasks:\n#{failed.join("\n")}" if failed.any?
+    raise "Some tasks failed" if failed.any?
   end
 
   desc "status", "List post push tasks and their status"
