@@ -13,16 +13,16 @@ class PostPushExeTest < ActiveSupport::TestCase
   end
 
   describe "#work" do
-    setup { subject.work }
-
     # TODO: re-enable this.  Solano isn't finding all the tasks (I think),
     # so this one isn't available.  Make it work in a debug console with
     # bin/solano_run_gem_tests.  --sagotsky
     # it "should mark finished tasks so they dont rerun" do
+    #   subject.work
     #   completed_tasks.must_include 'post_push:3:runnable_task'
     # end
 
     it "should not mark failed tasks as finished" do
+      subject.work rescue nil
       completed_tasks.wont_include "post_push:1:broken_task"
     end
   end
