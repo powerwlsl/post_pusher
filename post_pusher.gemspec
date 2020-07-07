@@ -26,4 +26,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "minitest-reporters", "~> 1.1.11"
   spec.add_development_dependency "minitest-spec-rails"
   spec.add_development_dependency "pry"
+  spec.add_development_dependency "rails", "~> 5.2.4.3"
+  spec.add_development_dependency "sprockets", "~> 3.7.2"
 end
