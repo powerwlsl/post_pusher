@@ -33,8 +33,8 @@ class RakeTaskRunner
   end
 
   def log_file_path
-    logs = File.join(Rails.root, "log")
-    Dir.mkdir(logs) unless Dir.exist?(logs)
+    logs = File.join(Rails.root, "log", "post_push")
+    FileUtils.mkdir_p(logs) unless Dir.exist?(logs)
     File.join(logs, "#{log_file_name}.log")
   end
 
